@@ -1,11 +1,6 @@
 {
-  "information_for_contributors": [
-    "This file has been converted from https://github.com/MagicStack/MagicPython/blob/master/grammars/MagicPython.tmLanguage",
-    "If you want to provide a fix or improvement, please create a pull request against the original repository.",
-    "Once accepted there, we are happy to receive an update request."
-  ],
-  "version": "https://github.com/MagicStack/MagicPython/commit/7d0f2b22a5ad8fccbd7341bc7b7a715169283044",
-  "name": "MagicPython",
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Mojo🔥",
   "scopeName": "source.mojo",
   "patterns": [
     {
@@ -54,7 +49,7 @@
     "semicolon": {
       "patterns": [
         {
-          "name": "invalid.deprecated.semicolon.python",
+          "name": "invalid.deprecated.semicolon.mojo",
           "match": "\\;$"
         }
       ]
@@ -62,33 +57,33 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.number-sign.python",
-          "contentName": "meta.typehint.comment.python",
+          "name": "comment.line.number-sign.mojo",
+          "contentName": "meta.typehint.comment.mojo",
           "begin": "(?x)\n  (?:\n    \\# \\s* (type:)\n    \\s*+ (?# we want `\\s*+` which is possessive quantifier since\n             we do not actually want to backtrack when matching\n             whitespace here)\n    (?! $ | \\#)\n  )\n",
           "end": "(?:$|(?=\\#))",
           "beginCaptures": {
             "0": {
-              "name": "meta.typehint.comment.python"
+              "name": "meta.typehint.comment.mojo"
             },
             "1": {
-              "name": "comment.typehint.directive.notation.python"
+              "name": "comment.typehint.directive.notation.mojo"
             }
           },
           "patterns": [
             {
-              "name": "comment.typehint.ignore.notation.python",
+              "name": "comment.typehint.ignore.notation.mojo",
               "match": "(?x)\n  \\G ignore\n  (?= \\s* (?: $ | \\#))\n"
             },
             {
-              "name": "comment.typehint.type.notation.python",
+              "name": "comment.typehint.type.notation.mojo",
               "match": "(?x)\n  (?<!\\.)\\b(\n    bool | bytes | float | int | object | str\n    | List | Dict | Iterable | Sequence | Set\n    | FrozenSet | Callable | Union | Tuple\n    | Any | None\n  )\\b\n"
             },
             {
-              "name": "comment.typehint.punctuation.notation.python",
+              "name": "comment.typehint.punctuation.notation.mojo",
               "match": "([\\[\\]\\(\\),\\.\\=\\*]|(->))"
             },
             {
-              "name": "comment.typehint.variable.notation.python",
+              "name": "comment.typehint.variable.notation.mojo",
               "match": "([[:alpha:]_]\\w*)"
             }
           ]
@@ -111,17 +106,17 @@
     "docstring": {
       "patterns": [
         {
-          "name": "string.quoted.docstring.multi.python",
+          "name": "string.quoted.docstring.multi.mojo",
           "begin": "(\\'\\'\\'|\\\"\\\"\\\")",
           "end": "(\\1)",
           "beginCaptures": {
             "1": {
-              "name": "punctuation.definition.string.begin.python"
+              "name": "punctuation.definition.string.begin.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.definition.string.end.python"
+              "name": "punctuation.definition.string.end.mojo"
             }
           },
           "patterns": [
@@ -137,20 +132,20 @@
           ]
         },
         {
-          "name": "string.quoted.docstring.raw.multi.python",
+          "name": "string.quoted.docstring.raw.multi.mojo",
           "begin": "([rR])(\\'\\'\\'|\\\"\\\"\\\")",
           "end": "(\\2)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.string.python"
+              "name": "storage.type.string.mojo"
             },
             "2": {
-              "name": "punctuation.definition.string.begin.python"
+              "name": "punctuation.definition.string.begin.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.definition.string.end.python"
+              "name": "punctuation.definition.string.end.mojo"
             }
           },
           "patterns": [
@@ -166,20 +161,20 @@
           ]
         },
         {
-          "name": "string.quoted.docstring.single.python",
+          "name": "string.quoted.docstring.single.mojo",
           "begin": "(\\'|\\\")",
           "end": "(\\1)|(\\n)",
           "beginCaptures": {
             "1": {
-              "name": "punctuation.definition.string.begin.python"
+              "name": "punctuation.definition.string.begin.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.definition.string.end.python"
+              "name": "punctuation.definition.string.end.mojo"
             },
             "2": {
-              "name": "invalid.illegal.newline.python"
+              "name": "invalid.illegal.newline.mojo"
             }
           },
           "patterns": [
@@ -192,23 +187,23 @@
           ]
         },
         {
-          "name": "string.quoted.docstring.raw.single.python",
+          "name": "string.quoted.docstring.raw.single.mojo",
           "begin": "([rR])(\\'|\\\")",
           "end": "(\\2)|(\\n)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.string.python"
+              "name": "storage.type.string.mojo"
             },
             "2": {
-              "name": "punctuation.definition.string.begin.python"
+              "name": "punctuation.definition.string.begin.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.definition.string.end.python"
+              "name": "punctuation.definition.string.end.mojo"
             },
             "2": {
-              "name": "invalid.illegal.newline.python"
+              "name": "invalid.illegal.newline.mojo"
             }
           },
           "patterns": [
@@ -239,43 +234,43 @@
       "match": "(?x)\n  (?:\n    (?:^|\\G) \\s* (?# '\\G' is necessary for ST)\n    ((?:>>>|\\.\\.\\.) \\s) (?=\\s*\\S)\n  )\n",
       "captures": {
         "1": {
-          "name": "keyword.control.flow.python"
+          "name": "keyword.control.flow.mojo"
         }
       }
     },
     "statement-keyword": {
       "patterns": [
         {
-          "name": "storage.type.function.python",
+          "name": "storage.type.function.mojo",
           "match": "\\b((async\\s+)?\\s*def)\\b"
         },
         {
-          "name": "keyword.control.flow.python",
+          "name": "keyword.control.flow.mojo",
           "comment": "if `as` is eventually followed by `:` or line continuation\nit's probably control flow like:\n    with foo as bar, \\\n         Foo as Bar:\n      try:\n        do_stuff()\n      except Exception as e:\n        pass\n",
           "match": "\\b(?<!\\.)as\\b(?=.*[:\\\\])"
         },
         {
-          "name": "keyword.control.import.python",
+          "name": "keyword.control.import.mojo",
           "comment": "other legal use of `as` is in an import",
           "match": "\\b(?<!\\.)as\\b"
         },
         {
-          "name": "keyword.control.flow.python",
+          "name": "keyword.control.flow.mojo",
           "match": "(?x)\n  \\b(?<!\\.)(\n    async | continue | del | assert | break | finally | for\n    | from | elif | else | if | except | pass | raise\n    | return | try | while | with\n  )\\b\n"
         },
         {
-          "name": "storage.modifier.declaration.python",
+          "name": "storage.modifier.declaration.mojo",
           "match": "(?x)\n  \\b(?<!\\.)(\n    global | nonlocal\n  )\\b\n"
         },
         {
-          "name": "storage.type.class.python",
+          "name": "storage.type.class.mojo",
           "match": "\\b(?<!\\.)(class|struct)\\b"
         },
         {
           "match": "(?x)\n  ^\\s*(\n    case | match\n  )(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b\n",
           "captures": {
             "1": {
-              "name": "keyword.control.flow.python"
+              "name": "keyword.control.flow.mojo"
             }
           }
         },
@@ -283,17 +278,17 @@
           "match": "\\b(var|let|alias) \\s*([[:alpha:]_]\\w*)\\b",
           "captures": {
             "1": {
-              "name": "storage.modifier.declaration.python"
+              "name": "storage.modifier.declaration.mojo"
             },
             "2": {
-              "name": "variable.other.python"
+              "name": "variable.other.mojo"
             }
           }
         }
       ]
     },
     "expression-bare": {
-      "comment": "valid Python expressions w/o comments and line continuation",
+      "comment": "valid Mojo🔥 expressions w/o comments and line continuation",
       "patterns": [
         {
           "include": "#backticks"
@@ -373,7 +368,7 @@
       ]
     },
     "expression-base": {
-      "comment": "valid Python expressions with comments and line continuation",
+      "comment": "valid Mojo🔥 expressions with comments and line continuation",
       "patterns": [
         {
           "include": "#comments"
@@ -387,7 +382,7 @@
       ]
     },
     "expression": {
-      "comment": "All valid Python expressions",
+      "comment": "All valid Mojo🔥 expressions",
       "patterns": [
         {
           "include": "#expression-base"
@@ -402,12 +397,12 @@
       ]
     },
     "member-access": {
-      "name": "meta.member.access.python",
+      "name": "meta.member.access.mojo",
       "begin": "(\\.)\\s*(?!\\.)",
       "end": "(?x)\n  # stop when you've just read non-whitespace followed by non-word\n  # i.e. when finished reading an identifier or function call\n  (?<=\\S)(?=\\W) |\n  # stop when seeing the start of something that's not a word,\n  # i.e. when seeing a non-identifier\n  (^|(?<=\\s))(?=[^\\\\\\w\\s]) |\n  $\n",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.separator.period.python"
+          "name": "punctuation.separator.period.mojo"
         }
       },
       "patterns": [
@@ -446,11 +441,11 @@
     },
     "member-access-attribute": {
       "comment": "Highlight attribute access in otherwise non-specialized cases.",
-      "name": "meta.attribute.python",
+      "name": "meta.attribute.mojo",
       "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\b\n"
     },
     "special-names": {
-      "name": "constant.other.caps.python",
+      "name": "constant.other.caps.mojo",
       "match": "(?x)\n  \\b\n    # we want to see \"enough\", meaning 2 or more upper-case\n    # letters in the beginning of the constant\n    #\n    # for more details refer to:\n    #   https://github.com/MagicStack/MagicPython/issues/42\n    (\n      _* [[:upper:]] [_\\d]* [[:upper:]]\n    )\n    [[:upper:]\\d]* (_\\w*)?\n  \\b\n"
     },
     "curly-braces": {
@@ -458,17 +453,17 @@
       "end": "\\}",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.dict.begin.python"
+          "name": "punctuation.definition.dict.begin.mojo"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.dict.end.python"
+          "name": "punctuation.definition.dict.end.mojo"
         }
       },
       "patterns": [
         {
-          "name": "punctuation.separator.dict.python",
+          "name": "punctuation.separator.dict.mojo",
           "match": ":"
         },
         {
@@ -481,12 +476,12 @@
       "end": "\\]",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.list.begin.python"
+          "name": "punctuation.definition.list.begin.mojo"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.list.end.python"
+          "name": "punctuation.definition.list.end.mojo"
         }
       },
       "patterns": [
@@ -501,7 +496,7 @@
       "end": "(\\))",
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.arguments.end.python"
+          "name": "punctuation.definition.arguments.end.mojo"
         }
       },
       "patterns": [
@@ -515,12 +510,12 @@
       "end": "\\)",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.parenthesis.begin.python"
+          "name": "punctuation.parenthesis.begin.mojo"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.parenthesis.end.python"
+          "name": "punctuation.parenthesis.end.mojo"
         }
       },
       "patterns": [
@@ -535,10 +530,10 @@
           "match": "(\\\\)\\s*(\\S.*$\\n?)",
           "captures": {
             "1": {
-              "name": "punctuation.separator.continuation.line.python"
+              "name": "punctuation.separator.continuation.line.mojo"
             },
             "2": {
-              "name": "invalid.illegal.line.continuation.python"
+              "name": "invalid.illegal.line.continuation.mojo"
             }
           }
         },
@@ -547,7 +542,7 @@
           "end": "(?x)\n  (?=^\\s*$)\n  |\n  (?! (\\s* [rR]? (\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))\n      |\n      (\\G $)  (?# '\\G' is necessary for ST)\n  )\n",
           "beginCaptures": {
             "1": {
-              "name": "punctuation.separator.continuation.line.python"
+              "name": "punctuation.separator.continuation.line.mojo"
             }
           },
           "patterns": [
@@ -562,40 +557,40 @@
       ]
     },
     "assignment-operator": {
-      "name": "keyword.operator.assignment.python",
+      "name": "keyword.operator.assignment.mojo",
       "match": "(?x)\n     <<= | >>= | //= | \\*\\*=\n    | \\+= | -= | /= | @=\n    | \\*= | %= | ~= | \\^= | &= | \\|=\n    | =(?!=)\n"
     },
     "operator": {
       "match": "(?x)\n    \\b(?<!\\.)\n      (?:\n        (and | or | not | in | is)                         (?# 1)\n        |\n        (for | if | else | await | (?:yield(?:\\s+from)?))  (?# 2)\n      )\n    (?!\\s*:)\\b\n\n    | (<< | >> | & | \\| | \\^ | ~)                          (?# 3)\n\n    | (\\*\\* | \\* | \\+ | - | % | // | / | @)                (?# 4)\n\n    | (!= | == | >= | <= | < | >)                          (?# 5)\n\n    | (:=)                                                 (?# 6)\n",
       "captures": {
         "1": {
-          "name": "keyword.operator.logical.python"
+          "name": "keyword.operator.logical.mojo"
         },
         "2": {
-          "name": "keyword.control.flow.python"
+          "name": "keyword.control.flow.mojo"
         },
         "3": {
-          "name": "keyword.operator.bitwise.python"
+          "name": "keyword.operator.bitwise.mojo"
         },
         "4": {
-          "name": "keyword.operator.arithmetic.python"
+          "name": "keyword.operator.arithmetic.mojo"
         },
         "5": {
-          "name": "keyword.operator.comparison.python"
+          "name": "keyword.operator.comparison.mojo"
         },
         "6": {
-          "name": "keyword.operator.assignment.python"
+          "name": "keyword.operator.assignment.mojo"
         }
       }
     },
     "punctuation": {
       "patterns": [
         {
-          "name": "punctuation.separator.colon.python",
+          "name": "punctuation.separator.colon.mojo",
           "match": ":"
         },
         {
-          "name": "punctuation.separator.element.python",
+          "name": "punctuation.separator.element.mojo",
           "match": ","
         }
       ]
@@ -603,7 +598,7 @@
     "literal": {
       "patterns": [
         {
-          "name": "constant.language.python",
+          "name": "constant.language.mojo",
           "match": "\\b(True|False|None|NotImplemented|Ellipsis)\\b"
         },
         {
@@ -612,7 +607,7 @@
       ]
     },
     "number": {
-      "name": "constant.numeric.python",
+      "name": "constant.numeric.mojo",
       "patterns": [
         {
           "include": "#number-float"
@@ -633,66 +628,66 @@
           "include": "#number-long"
         },
         {
-          "name": "invalid.illegal.name.python",
+          "name": "invalid.illegal.name.mojo",
           "match": "\\b[0-9]+\\w+"
         }
       ]
     },
     "number-float": {
-      "name": "constant.numeric.float.python",
+      "name": "constant.numeric.float.mojo",
       "match": "(?x)\n  (?<! \\w)(?:\n    (?:\n      \\.[0-9](?: _?[0-9] )*\n      |\n      [0-9](?: _?[0-9] )* \\. [0-9](?: _?[0-9] )*\n      |\n      [0-9](?: _?[0-9] )* \\.\n    ) (?: [eE][+-]?[0-9](?: _?[0-9] )* )?\n    |\n    [0-9](?: _?[0-9] )* (?: [eE][+-]?[0-9](?: _?[0-9] )* )\n  )([jJ])?\\b\n",
       "captures": {
         "1": {
-          "name": "storage.type.imaginary.number.python"
+          "name": "storage.type.imaginary.number.mojo"
         }
       }
     },
     "number-dec": {
-      "name": "constant.numeric.dec.python",
+      "name": "constant.numeric.dec.mojo",
       "match": "(?x)\n  (?<![\\w\\.])(?:\n      [1-9](?: _?[0-9] )*\n      |\n      0+\n      |\n      [0-9](?: _?[0-9] )* ([jJ])\n      |\n      0 ([0-9]+)(?![eE\\.])\n  )\\b\n",
       "captures": {
         "1": {
-          "name": "storage.type.imaginary.number.python"
+          "name": "storage.type.imaginary.number.mojo"
         },
         "2": {
-          "name": "invalid.illegal.dec.python"
+          "name": "invalid.illegal.dec.mojo"
         }
       }
     },
     "number-hex": {
-      "name": "constant.numeric.hex.python",
+      "name": "constant.numeric.hex.mojo",
       "match": "(?x)\n  (?<![\\w\\.])\n    (0[xX]) (_?[0-9a-fA-F])+\n  \\b\n",
       "captures": {
         "1": {
-          "name": "storage.type.number.python"
+          "name": "storage.type.number.mojo"
         }
       }
     },
     "number-oct": {
-      "name": "constant.numeric.oct.python",
+      "name": "constant.numeric.oct.mojo",
       "match": "(?x)\n  (?<![\\w\\.])\n    (0[oO]) (_?[0-7])+\n  \\b\n",
       "captures": {
         "1": {
-          "name": "storage.type.number.python"
+          "name": "storage.type.number.mojo"
         }
       }
     },
     "number-bin": {
-      "name": "constant.numeric.bin.python",
+      "name": "constant.numeric.bin.mojo",
       "match": "(?x)\n  (?<![\\w\\.])\n    (0[bB]) (_?[01])+\n  \\b\n",
       "captures": {
         "1": {
-          "name": "storage.type.number.python"
+          "name": "storage.type.number.mojo"
         }
       }
     },
     "number-long": {
-      "name": "constant.numeric.bin.python",
+      "name": "constant.numeric.bin.mojo",
       "comment": "this is to support python2 syntax for long ints",
       "match": "(?x)\n  (?<![\\w\\.])\n    ([1-9][0-9]* | 0) ([lL])\n  \\b\n",
       "captures": {
         "2": {
-          "name": "storage.type.number.python"
+          "name": "storage.type.number.mojo"
         }
       }
     },
@@ -842,12 +837,12 @@
       "end": "(\\})|(?=\\n)",
       "beginCaptures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       },
       "patterns": [
@@ -867,7 +862,7 @@
       ]
     },
     "f-expression": {
-      "comment": "All valid Python expressions, except comments and line continuation",
+      "comment": "All valid Mojo🔥 expressions, except comments and line continuation",
       "patterns": [
         {
           "include": "#expression-bare"
@@ -884,57 +879,57 @@
     "escape-sequence-unicode": {
       "patterns": [
         {
-          "name": "constant.character.escape.python",
+          "name": "constant.character.escape.mojo",
           "match": "(?x)\n  \\\\ (\n        u[0-9A-Fa-f]{4}\n        | U[0-9A-Fa-f]{8}\n        | N\\{[\\w\\s]+?\\}\n     )\n"
         }
       ]
     },
     "escape-sequence": {
-      "name": "constant.character.escape.python",
+      "name": "constant.character.escape.mojo",
       "match": "(?x)\n  \\\\ (\n        x[0-9A-Fa-f]{2}\n        | [0-7]{1,3}\n        | [\\\\\"'abfnrtv]\n     )\n"
     },
     "string-line-continuation": {
-      "name": "constant.language.python",
+      "name": "constant.language.mojo",
       "match": "\\\\$"
     },
     "string-formatting": {
-      "name": "meta.format.percent.python",
+      "name": "meta.format.percent.mojo",
       "match": "(?x)\n  (\n    % (\\([\\w\\s]*\\))?\n      [-+#0 ]*\n      (\\d+|\\*)? (\\.(\\d+|\\*))?\n      ([hlL])?\n      [diouxXeEfFgGcrsab%]\n  )\n",
       "captures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       }
     },
     "string-brace-formatting": {
       "patterns": [
         {
-          "name": "meta.format.brace.python",
+          "name": "meta.format.brace.mojo",
           "match": "(?x)\n  (\n    {{ | }}\n    | (?:\n      {\n        \\w* (\\.[[:alpha:]_]\\w* | \\[[^\\]'\"]+\\])*\n        (![rsa])?\n        ( : \\w? [<>=^]? [-+ ]? \\#?\n          \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?\n      })\n  )\n",
           "captures": {
             "1": {
-              "name": "constant.character.format.placeholder.other.python"
+              "name": "constant.character.format.placeholder.other.mojo"
             },
             "3": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             },
             "4": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             }
           }
         },
         {
-          "name": "meta.format.brace.python",
+          "name": "meta.format.brace.mojo",
           "match": "(?x)\n  (\n    {\n      \\w* (\\.[[:alpha:]_]\\w* | \\[[^\\]'\"]+\\])*\n      (![rsa])?\n      (:)\n        [^'\"{}\\n]* (?:\n          \\{ [^'\"}\\n]*? \\} [^'\"{}\\n]*\n        )*\n    }\n  )\n",
           "captures": {
             "1": {
-              "name": "constant.character.format.placeholder.other.python"
+              "name": "constant.character.format.placeholder.other.mojo"
             },
             "3": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             },
             "4": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             }
           }
         }
@@ -951,7 +946,7 @@
       ]
     },
     "fstring-formatting-singe-brace": {
-      "name": "invalid.illegal.brace.python",
+      "name": "invalid.illegal.brace.mojo",
       "match": "(}(?!}))"
     },
     "import": {
@@ -962,12 +957,12 @@
           "end": "$|(?=import)",
           "beginCaptures": {
             "1": {
-              "name": "keyword.control.import.python"
+              "name": "keyword.control.import.mojo"
             }
           },
           "patterns": [
             {
-              "name": "punctuation.separator.period.python",
+              "name": "punctuation.separator.period.mojo",
               "match": "\\.+"
             },
             {
@@ -980,12 +975,12 @@
           "end": "$",
           "beginCaptures": {
             "1": {
-              "name": "keyword.control.import.python"
+              "name": "keyword.control.import.mojo"
             }
           },
           "patterns": [
             {
-              "name": "keyword.control.import.python",
+              "name": "keyword.control.import.mojo",
               "match": "\\b(?<!\\.)as\\b"
             },
             {
@@ -998,17 +993,17 @@
     "class-declaration": {
       "patterns": [
         {
-          "name": "meta.class.python",
+          "name": "meta.class.mojo",
           "begin": "(?x)\n  \\s*(class|struct)\\s+\n    (?=\n      [[:alpha:]_]\\w* \\s* (:|\\()\n    )\n",
           "end": "(:)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.class.python"
+              "name": "storage.type.class.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.section.class.begin.python"
+              "name": "punctuation.section.class.begin.mojo"
             }
           },
           "patterns": [
@@ -1031,40 +1026,40 @@
           "include": "#builtin-possible-callables"
         },
         {
-          "name": "entity.name.type.class.python",
+          "name": "entity.name.type.class.mojo",
           "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\b\n"
         }
       ]
     },
     "class-inheritance": {
-      "name": "meta.class.inheritance.python",
+      "name": "meta.class.inheritance.mojo",
       "begin": "(\\()",
       "end": "(\\))",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.inheritance.begin.python"
+          "name": "punctuation.definition.inheritance.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.inheritance.end.python"
+          "name": "punctuation.definition.inheritance.end.mojo"
         }
       },
       "patterns": [
         {
-          "name": "keyword.operator.unpacking.arguments.python",
+          "name": "keyword.operator.unpacking.arguments.mojo",
           "match": "(\\*\\*|\\*)"
         },
         {
-          "name": "punctuation.separator.inheritance.python",
+          "name": "punctuation.separator.inheritance.mojo",
           "match": ","
         },
         {
-          "name": "keyword.operator.assignment.python",
+          "name": "keyword.operator.assignment.mojo",
           "match": "=(?!=)"
         },
         {
-          "name": "support.type.metaclass.python",
+          "name": "support.type.metaclass.mojo",
           "match": "\\bmetaclass\\b"
         },
         {
@@ -1091,10 +1086,10 @@
       "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\s*(=)(?!=)\n",
       "captures": {
         "1": {
-          "name": "entity.other.inherited-class.python variable.parameter.class.python"
+          "name": "entity.other.inherited-class.mojo variable.parameter.class.mojo"
         },
         "2": {
-          "name": "keyword.operator.assignment.python"
+          "name": "keyword.operator.assignment.mojo"
         }
       }
     },
@@ -1102,17 +1097,17 @@
       "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\b\n",
       "captures": {
         "1": {
-          "name": "entity.other.inherited-class.python"
+          "name": "entity.other.inherited-class.mojo"
         }
       }
     },
     "member-access-class": {
-      "name": "meta.member.access.python",
+      "name": "meta.member.access.mojo",
       "begin": "(\\.)\\s*(?!\\.)",
       "end": "(?<=\\S)(?=\\W)|$",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.separator.period.python"
+          "name": "punctuation.separator.period.mojo"
         }
       },
       "patterns": [
@@ -1133,7 +1128,7 @@
           "match": "((?<=\\.)lambda|lambda(?=\\s*[\\.=]))",
           "captures": {
             "1": {
-              "name": "keyword.control.flow.python"
+              "name": "keyword.control.flow.mojo"
             }
           }
         },
@@ -1141,32 +1136,32 @@
           "match": "\\b(lambda)\\s*?(?=[,\\n]|$)",
           "captures": {
             "1": {
-              "name": "storage.type.function.lambda.python"
+              "name": "storage.type.function.lambda.mojo"
             }
           }
         },
         {
-          "name": "meta.lambda-function.python",
+          "name": "meta.lambda-function.mojo",
           "begin": "(?x)\n  \\b (lambda) \\b\n",
           "end": "(:)|(\\n)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.function.lambda.python"
+              "name": "storage.type.function.lambda.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.section.function.lambda.begin.python"
+              "name": "punctuation.section.function.lambda.begin.mojo"
             }
           },
-          "contentName": "meta.function.lambda.parameters.python",
+          "contentName": "meta.function.lambda.parameters.mojo",
           "patterns": [
             {
-              "name": "keyword.operator.positional.parameter.python",
+              "name": "keyword.operator.positional.parameter.mojo",
               "match": "/"
             },
             {
-              "name": "keyword.operator.unpacking.parameter.python",
+              "name": "keyword.operator.unpacking.parameter.mojo",
               "match": "(\\*\\*|\\*)"
             },
             {
@@ -1179,10 +1174,10 @@
               "match": "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=:|$))",
               "captures": {
                 "1": {
-                  "name": "variable.parameter.function.language.python"
+                  "name": "variable.parameter.function.language.mojo"
                 },
                 "2": {
-                  "name": "punctuation.separator.parameters.python"
+                  "name": "punctuation.separator.parameters.mojo"
                 }
               }
             },
@@ -1209,11 +1204,11 @@
       ]
     },
     "lambda-incomplete": {
-      "name": "storage.type.function.lambda.python",
+      "name": "storage.type.function.lambda.mojo",
       "match": "\\blambda(?=\\s*[,)])"
     },
     "lambda-nested-incomplete": {
-      "name": "storage.type.function.lambda.python",
+      "name": "storage.type.function.lambda.mojo",
       "match": "\\blambda(?=\\s*[:,)])"
     },
     "lambda-parameter-with-default": {
@@ -1221,15 +1216,15 @@
       "end": "(,)|(?=:|$)",
       "beginCaptures": {
         "1": {
-          "name": "variable.parameter.function.language.python"
+          "name": "variable.parameter.function.language.mojo"
         },
         "2": {
-          "name": "keyword.operator.python"
+          "name": "keyword.operator.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.separator.parameters.python"
+          "name": "punctuation.separator.parameters.mojo"
         }
       },
       "patterns": [
@@ -1243,13 +1238,13 @@
       "begin": "\\bfor\\b",
       "beginCaptures": {
         "0": {
-          "name": "keyword.control.flow.python"
+          "name": "keyword.control.flow.mojo"
         }
       },
       "end": "\\bin\\b",
       "endCaptures": {
         "0": {
-          "name": "keyword.control.flow.python"
+          "name": "keyword.control.flow.mojo"
         }
       },
       "patterns": [
@@ -1259,20 +1254,20 @@
       ]
     },
     "function-declaration": {
-      "name": "meta.function.python",
+      "name": "meta.function.mojo",
       "begin": "(?x)\n  \\s*\n  (?:\\b(async) \\s+)? \\b(def|fn)\\s+\n    (?=\n      [[:alpha:]_][[:word:]]* \\s* [\\(\\[]\n    )\n",
       "end": "(:|(?=[#'\"\\n]))",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.function.async.python"
+          "name": "storage.type.function.async.mojo"
         },
         "2": {
-          "name": "storage.type.function.python"
+          "name": "storage.type.function.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.section.function.begin.python"
+          "name": "punctuation.section.function.begin.mojo"
         }
       },
       "patterns": [
@@ -1302,32 +1297,32 @@
           "include": "#builtin-possible-callables"
         },
         {
-          "name": "entity.name.function.python",
+          "name": "entity.name.function.mojo",
           "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\b\n"
         }
       ]
     },
     "parameters": {
-      "name": "meta.function.parameters.python",
+      "name": "meta.function.parameters.mojo",
       "begin": "(\\()",
       "end": "(\\))",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.parameters.begin.python"
+          "name": "punctuation.definition.parameters.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.parameters.end.python"
+          "name": "punctuation.definition.parameters.end.mojo"
         }
       },
       "patterns": [
         {
-          "name": "keyword.operator.positional.parameter.python",
+          "name": "keyword.operator.positional.parameter.mojo",
           "match": "/"
         },
         {
-          "name": "keyword.operator.unpacking.parameter.python",
+          "name": "keyword.operator.unpacking.parameter.mojo",
           "match": "(\\*\\*|\\*)"
         },
         {
@@ -1346,10 +1341,10 @@
           "match": "(?x)\n  ([[:alpha:]_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
           "captures": {
             "1": {
-              "name": "variable.parameter.function.language.python"
+              "name": "variable.parameter.function.language.mojo"
             },
             "2": {
-              "name": "punctuation.separator.parameters.python"
+              "name": "punctuation.separator.parameters.mojo"
             }
           }
         },
@@ -1365,17 +1360,17 @@
       ]
     },
     "meta_parameters": {
-      "name": "meta.function.parameters.python",
+      "name": "meta.function.parameters.mojo",
       "begin": "(\\[)",
       "end": "(\\])",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.parameters.begin.python"
+          "name": "punctuation.definition.parameters.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.parameters.end.python"
+          "name": "punctuation.definition.parameters.end.mojo"
         }
       },
       "patterns": [
@@ -1384,15 +1379,15 @@
           "end": "(,)|(?=\\])",
           "beginCaptures": {
             "1": {
-              "name": "variable.parameter.function.language.python"
+              "name": "variable.parameter.function.language.mojo"
             },
             "2": {
-              "name": "punctuation.separator.annotation.python"
+              "name": "punctuation.separator.annotation.mojo"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "punctuation.separator.parameters.python"
+              "name": "punctuation.separator.parameters.mojo"
             }
           },
           "patterns": [
@@ -1410,16 +1405,16 @@
       "match": "(?x)\n  \\b ((self)|(cls)) \\b \\s*(?:(,)|(?=\\)))\n",
       "captures": {
         "1": {
-          "name": "variable.parameter.function.language.python"
+          "name": "variable.parameter.function.language.mojo"
         },
         "2": {
-          "name": "variable.parameter.function.language.special.self.python"
+          "name": "variable.parameter.function.language.special.self.mojo"
         },
         "3": {
-          "name": "variable.parameter.function.language.special.cls.python"
+          "name": "variable.parameter.function.language.special.cls.mojo"
         },
         "4": {
-          "name": "punctuation.separator.parameters.python"
+          "name": "punctuation.separator.parameters.mojo"
         }
       }
     },
@@ -1428,12 +1423,12 @@
       "end": "(,)|(?=\\))",
       "beginCaptures": {
         "1": {
-          "name": "keyword.operator.python"
+          "name": "keyword.operator.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.separator.parameters.python"
+          "name": "punctuation.separator.parameters.mojo"
         }
       },
       "patterns": [
@@ -1447,15 +1442,15 @@
       "end": "(,)|(?=\\))",
       "beginCaptures": {
         "1": {
-          "name": "variable.parameter.function.language.python"
+          "name": "variable.parameter.function.language.mojo"
         },
         "2": {
-          "name": "punctuation.separator.annotation.python"
+          "name": "punctuation.separator.annotation.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.separator.parameters.python"
+          "name": "punctuation.separator.parameters.mojo"
         }
       },
       "patterns": [
@@ -1463,7 +1458,7 @@
           "include": "#expression"
         },
         {
-          "name": "keyword.operator.assignment.python",
+          "name": "keyword.operator.assignment.mojo",
           "match": "=(?!=)"
         }
       ]
@@ -1473,7 +1468,7 @@
       "end": "(?=:)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.separator.annotation.result.python"
+          "name": "punctuation.separator.annotation.result.mojo"
         }
       },
       "patterns": [
@@ -1485,12 +1480,12 @@
     "item-access": {
       "patterns": [
         {
-          "name": "meta.item-access.python",
+          "name": "meta.item-access.mojo",
           "begin": "(?x)\n  \\b(?=\n    [[:alpha:]_]\\w* \\s* \\[\n  )\n",
           "end": "(\\])",
           "endCaptures": {
             "1": {
-              "name": "punctuation.definition.arguments.end.python"
+              "name": "punctuation.definition.arguments.end.mojo"
             }
           },
           "patterns": [
@@ -1519,7 +1514,7 @@
           "include": "#special-names"
         },
         {
-          "name": "meta.indexed-name.python",
+          "name": "meta.indexed-name.mojo",
           "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\b\n"
         }
       ]
@@ -1529,13 +1524,13 @@
       "end": "(?=\\])",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.arguments.begin.python"
+          "name": "punctuation.definition.arguments.begin.mojo"
         }
       },
-      "contentName": "meta.item-access.arguments.python",
+      "contentName": "meta.item-access.arguments.mojo",
       "patterns": [
         {
-          "name": "punctuation.separator.slice.python",
+          "name": "punctuation.separator.slice.mojo",
           "match": ":"
         },
         {
@@ -1544,23 +1539,23 @@
       ]
     },
     "decorator": {
-      "name": "meta.function.decorator.python",
+      "name": "meta.function.decorator.mojo",
       "begin": "(?x)\n  ^\\s*\n  ((@)) \\s* (?=[[:alpha:]_]\\w*)\n",
       "end": "(?x)\n  ( \\) )\n    # trailing whitespace and comments are legal\n    (?: (.*?) (?=\\s*(?:\\#|$)) )\n  | (?=\\n|\\#)\n",
       "beginCaptures": {
         "1": {
-          "name": "entity.name.function.decorator.python"
+          "name": "entity.name.function.decorator.mojo"
         },
         "2": {
-          "name": "punctuation.definition.decorator.python"
+          "name": "punctuation.definition.decorator.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.arguments.end.python"
+          "name": "punctuation.definition.arguments.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.decorator.python"
+          "name": "invalid.illegal.decorator.mojo"
         }
       },
       "patterns": [
@@ -1581,11 +1576,11 @@
           "include": "#illegal-object-name"
         },
         {
-          "name": "entity.name.function.decorator.python",
+          "name": "entity.name.function.decorator.mojo",
           "match": "(?x)\n  ([[:alpha:]_]\\w*) | (\\.)\n",
           "captures": {
             "2": {
-              "name": "punctuation.separator.period.python"
+              "name": "punctuation.separator.period.mojo"
             }
           }
         },
@@ -1593,11 +1588,11 @@
           "include": "#line-continuation"
         },
         {
-          "name": "invalid.illegal.decorator.python",
+          "name": "invalid.illegal.decorator.mojo",
           "match": "(?x)\n  \\s* ([^([:alpha:]\\s_\\.#\\\\] .*?) (?=\\#|$)\n",
           "captures": {
             "1": {
-              "name": "invalid.illegal.decorator.python"
+              "name": "invalid.illegal.decorator.mojo"
             }
           }
         }
@@ -1605,12 +1600,12 @@
     },
     "call-wrapper-inheritance": {
       "comment": "same as a function call, but in inheritance context",
-      "name": "meta.function-call.python",
+      "name": "meta.function-call.mojo",
       "begin": "(?x)\n  \\b(?=\n    ([[:alpha:]_]\\w*) \\s* (\\()\n  )\n",
       "end": "(\\))",
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.arguments.end.python"
+          "name": "punctuation.definition.arguments.end.mojo"
         }
       },
       "patterns": [
@@ -1636,13 +1631,13 @@
       ]
     },
     "function-call": {
-      "name": "meta.function-call.python",
+      "name": "meta.function-call.mojo",
       "comment": "Regular function call of the type \"name(args)\"",
       "begin": "(?x)\n  \\b(?=\n    ([[:alpha:]_]\\w*) \\s* (\\()\n  )\n",
       "end": "(\\))",
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.arguments.end.python"
+          "name": "punctuation.definition.arguments.end.mojo"
         }
       },
       "patterns": [
@@ -1664,7 +1659,7 @@
         },
         {
           "comment": "Some color schemas support meta.function-call.generic scope",
-          "name": "meta.function-call.generic.python",
+          "name": "meta.function-call.generic.mojo",
           "match": "(?x)\n  \\b ([[:alpha:]_]\\w*) \\b\n"
         }
       ]
@@ -1674,20 +1669,20 @@
       "end": "(?=\\))(?!\\)\\s*\\()",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.arguments.begin.python"
+          "name": "punctuation.definition.arguments.begin.mojo"
         }
       },
-      "contentName": "meta.function-call.arguments.python",
+      "contentName": "meta.function-call.arguments.mojo",
       "patterns": [
         {
-          "name": "punctuation.separator.arguments.python",
+          "name": "punctuation.separator.arguments.mojo",
           "match": "(,)"
         },
         {
           "match": "(?x)\n  (?:(?<=[,(])|^) \\s* (\\*{1,2})\n",
           "captures": {
             "1": {
-              "name": "keyword.operator.unpacking.arguments.python"
+              "name": "keyword.operator.unpacking.arguments.mojo"
             }
           }
         },
@@ -1701,15 +1696,15 @@
           "match": "\\b([[:alpha:]_]\\w*)\\s*(=)(?!=)",
           "captures": {
             "1": {
-              "name": "variable.parameter.function-call.python"
+              "name": "variable.parameter.function-call.mojo"
             },
             "2": {
-              "name": "keyword.operator.assignment.python"
+              "name": "keyword.operator.assignment.mojo"
             }
           }
         },
         {
-          "name": "keyword.operator.assignment.python",
+          "name": "keyword.operator.assignment.mojo",
           "match": "=(?!=)"
         },
         {
@@ -1719,10 +1714,10 @@
           "match": "\\s*(\\))\\s*(\\()",
           "captures": {
             "1": {
-              "name": "punctuation.definition.arguments.end.python"
+              "name": "punctuation.definition.arguments.end.mojo"
             },
             "2": {
-              "name": "punctuation.definition.arguments.begin.python"
+              "name": "punctuation.definition.arguments.begin.mojo"
             }
           }
         }
@@ -1758,23 +1753,23 @@
       ]
     },
     "builtin-exceptions": {
-      "name": "support.type.exception.python",
+      "name": "support.type.exception.mojo",
       "match": "(?x) (?<!\\.) \\b(\n  (\n    Arithmetic | Assertion | Attribute | Buffer | BlockingIO\n    | BrokenPipe | ChildProcess\n    | (Connection (Aborted | Refused | Reset)?)\n    | EOF | Environment | FileExists | FileNotFound\n    | FloatingPoint | IO | Import | Indentation | Index | Interrupted\n    | IsADirectory | NotADirectory | Permission | ProcessLookup\n    | Timeout\n    | Key | Lookup | Memory | Name | NotImplemented | OS | Overflow\n    | Reference | Runtime | Recursion | Syntax | System\n    | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?\n    | Value | Windows | ZeroDivision | ModuleNotFound\n  ) Error\n|\n  ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import\n    | Unicode | Bytes | Resource\n  )? Warning\n|\n  SystemExit | Stop(Async)?Iteration\n  | KeyboardInterrupt\n  | GeneratorExit | (Base)?Exception\n)\\b\n"
     },
     "builtin-functions": {
       "patterns": [
         {
-          "name": "support.function.builtin.python",
+          "name": "support.function.builtin.mojo",
           "match": "(?x)\n  (?<!\\.) \\b(\n    __import__ | abs | aiter | all | any | anext | ascii | bin\n    | breakpoint | callable | chr | compile | copyright | credits\n    | delattr | dir | divmod | enumerate | eval | exec | exit\n    | filter | format | getattr | globals | hasattr | hash | help\n    | hex | id | input | isinstance | issubclass | iter | len\n    | license | locals | map | max | memoryview | min | next\n    | oct | open | ord | pow | print | quit | range | reload | repr\n    | reversed | round | setattr | sorted | sum | vars | zip\n  )\\b\n"
         },
         {
-          "name": "variable.legacy.builtin.python",
+          "name": "variable.legacy.builtin.mojo",
           "match": "(?x)\n  (?<!\\.) \\b(\n    file | reduce | intern | raw_input | unicode | cmp | basestring\n    | execfile | long | xrange\n  )\\b\n"
         }
       ]
     },
     "builtin-types": {
-      "name": "support.type.python",
+      "name": "support.type.mojo",
       "match": "(?x)\n  (?<!\\.) \\b(\n    __mlir_attr | __mlir_op | __mlir_type | bool | bytearray | bytes | classmethod | complex | dict\n    | float | frozenset | int | list | object | property\n    | set | slice | staticmethod | str | tuple | type\n\n    (?# Although 'super' is not a type, it's related to types,\n        and is special enough to be highlighted differently from\n        other built-ins)\n    | super\n  )\\b\n"
     },
     "magic-function-names": {
@@ -1782,7 +1777,7 @@
       "match": "(?x)\n  \\b(\n    __(?:\n      abs | add | aenter | aexit | aiter | and | anext\n      | await | bool | call | ceil | class_getitem\n      | cmp | coerce | complex | contains | copy\n      | deepcopy | del | delattr | delete | delitem\n      | delslice | dir | div | divmod | enter | eq\n      | exit | float | floor | floordiv | format | ge\n      | get | getattr | getattribute | getinitargs\n      | getitem | getnewargs | getslice | getstate | gt\n      | hash | hex | iadd | iand | idiv | ifloordiv |\n      | ilshift | imod | imul | index | init\n      | instancecheck | int | invert | ior | ipow\n      | irshift | isub | iter | itruediv | ixor | le\n      | len | long | lshift | lt | missing | mod | mul\n      | ne | neg | new | next | nonzero | oct | or | pos\n      | pow | radd | rand | rdiv | rdivmod | reduce\n      | reduce_ex | repr | reversed | rfloordiv |\n      | rlshift | rmod | rmul | ror | round | rpow\n      | rrshift | rshift | rsub | rtruediv | rxor | set\n      | setattr | setitem | set_name | setslice\n      | setstate | sizeof | str | sub | subclasscheck\n      | truediv | trunc | unicode | xor | matmul\n      | rmatmul | imatmul | init_subclass | set_name\n      | fspath | bytes | prepare | length_hint\n    )__\n  )\\b\n",
       "captures": {
         "1": {
-          "name": "support.function.magic.python"
+          "name": "support.function.magic.mojo"
         }
       }
     },
@@ -1791,7 +1786,7 @@
       "match": "(?x)\n  \\b(\n    __(?:\n      all | annotations | bases | builtins | class\n      | struct\n      | closure | code | debug | defaults | dict | doc | file | func\n      | globals | kwdefaults | match_args | members | metaclass | methods\n      | module | mro | mro_entries | name | qualname | post_init | self\n      | signature | slots | subclasses | version | weakref | wrapped\n      | classcell | spec | path | package | future | traceback\n    )__\n  )\\b\n",
       "captures": {
         "1": {
-          "name": "support.variable.magic.python"
+          "name": "support.variable.magic.mojo"
         }
       }
     },
@@ -1809,10 +1804,10 @@
       "match": "(?x)\n  \\b(?:\n    (\n      and | assert | async | await | break | class | struct | continue | def\n       | fn\n      | del | elif | else | except | finally | for | from | global\n      | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])\n      | nonlocal | not | or | pass | raise | return | try | while | with\n      | yield\n    ) | (\n      as | import\n    )\n  )\\b\n",
       "captures": {
         "1": {
-          "name": "keyword.control.flow.python"
+          "name": "keyword.control.flow.mojo"
         },
         "2": {
-          "name": "keyword.control.import.python"
+          "name": "keyword.control.import.mojo"
         }
       }
     },
@@ -1820,34 +1815,34 @@
       "match": "(?x)\n  \\b (?<!\\.) (?:\n    (self) | (cls)\n  )\\b\n",
       "captures": {
         "1": {
-          "name": "variable.language.special.self.python"
+          "name": "variable.language.special.self.mojo"
         },
         "2": {
-          "name": "variable.language.special.cls.python"
+          "name": "variable.language.special.cls.mojo"
         }
       }
     },
     "ellipsis": {
-      "name": "constant.other.ellipsis.python",
+      "name": "constant.other.ellipsis.mojo",
       "match": "\\.\\.\\."
     },
     "backticks": {
-      "name": "string.quoted.single.python",
+      "name": "string.quoted.single.mojo",
       "begin": "\\`",
       "end": "(?:\\`|(?<!\\\\)(\\n))"
     },
     "illegal-operator": {
       "patterns": [
         {
-          "name": "invalid.illegal.operator.python",
+          "name": "invalid.illegal.operator.mojo",
           "match": "&&|\\|\\||--|\\+\\+"
         },
         {
-          "name": "invalid.illegal.operator.python",
+          "name": "invalid.illegal.operator.mojo",
           "match": "[?$]"
         },
         {
-          "name": "invalid.illegal.operator.python",
+          "name": "invalid.illegal.operator.mojo",
           "comment": "We don't want `!` to flash when we're typing `!=`",
           "match": "!\\b"
         }
@@ -1855,11 +1850,11 @@
     },
     "illegal-object-name": {
       "comment": "It's illegal to name class or function \"True\"",
-      "name": "keyword.illegal.name.python",
+      "name": "keyword.illegal.name.mojo",
       "match": "\\b(True|False|None)\\b"
     },
     "illegal-anno": {
-      "name": "invalid.illegal.annotation.python",
+      "name": "invalid.illegal.annotation.mojo",
       "match": "->"
     },
     "regexp-base-expression": {
@@ -1895,18 +1890,18 @@
           "match": "({)(\\s*?)(})",
           "captures": {
             "1": {
-              "name": "constant.character.format.placeholder.other.python"
+              "name": "constant.character.format.placeholder.other.mojo"
             },
             "2": {
-              "name": "invalid.illegal.brace.python"
+              "name": "invalid.illegal.brace.mojo"
             },
             "3": {
-              "name": "constant.character.format.placeholder.other.python"
+              "name": "constant.character.format.placeholder.other.mojo"
             }
           }
         },
         {
-          "name": "constant.character.escape.python",
+          "name": "constant.character.escape.mojo",
           "match": "({{|}})"
         }
       ]
@@ -2037,16 +2032,16 @@
       "match": "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)",
       "captures": {
         "1": {
-          "name": "keyword.codetag.notation.python"
+          "name": "keyword.codetag.notation.mojo"
         }
       }
     },
     "comments-base": {
-      "name": "comment.line.number-sign.python",
+      "name": "comment.line.number-sign.mojo",
       "begin": "(\\#)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.comment.python"
+          "name": "punctuation.definition.comment.mojo"
         }
       },
       "end": "($)",
@@ -2057,11 +2052,11 @@
       ]
     },
     "comments-string-single-three": {
-      "name": "comment.line.number-sign.python",
+      "name": "comment.line.number-sign.mojo",
       "begin": "(\\#)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.comment.python"
+          "name": "punctuation.definition.comment.mojo"
         }
       },
       "end": "($|(?='''))",
@@ -2072,11 +2067,11 @@
       ]
     },
     "comments-string-double-three": {
-      "name": "comment.line.number-sign.python",
+      "name": "comment.line.number-sign.mojo",
       "begin": "(\\#)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.comment.python"
+          "name": "punctuation.definition.comment.mojo"
         }
       },
       "end": "($|(?=\"\"\"))",
@@ -2154,7 +2149,7 @@
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
             },
             "2": {
-              "name": "invalid.illegal.newline.python"
+              "name": "invalid.illegal.newline.mojo"
             }
           },
           "patterns": [
@@ -2186,7 +2181,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2209,7 +2204,7 @@
           "name": "punctuation.comment.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2234,7 +2229,7 @@
           "name": "keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2259,7 +2254,7 @@
           "name": "keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2284,7 +2279,7 @@
           "name": "keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2309,7 +2304,7 @@
           "name": "keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2334,7 +2329,7 @@
           "name": "keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2356,7 +2351,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2378,7 +2373,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2458,7 +2453,7 @@
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
             },
             "2": {
-              "name": "invalid.illegal.newline.python"
+              "name": "invalid.illegal.newline.mojo"
             }
           },
           "patterns": [
@@ -2490,7 +2485,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2516,7 +2511,7 @@
           "name": "punctuation.comment.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2541,7 +2536,7 @@
           "name": "keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2569,7 +2564,7 @@
           "name": "keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2597,7 +2592,7 @@
           "name": "keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2625,7 +2620,7 @@
           "name": "keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2653,7 +2648,7 @@
           "name": "keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2678,7 +2673,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2703,7 +2698,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2783,7 +2778,7 @@
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
             },
             "2": {
-              "name": "invalid.illegal.newline.python"
+              "name": "invalid.illegal.newline.mojo"
             }
           },
           "patterns": [
@@ -2815,7 +2810,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2838,7 +2833,7 @@
           "name": "punctuation.comment.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2863,7 +2858,7 @@
           "name": "keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2888,7 +2883,7 @@
           "name": "keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2913,7 +2908,7 @@
           "name": "keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2938,7 +2933,7 @@
           "name": "keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2963,7 +2958,7 @@
           "name": "keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -2985,7 +2980,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3007,7 +3002,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3087,7 +3082,7 @@
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
             },
             "2": {
-              "name": "invalid.illegal.newline.python"
+              "name": "invalid.illegal.newline.mojo"
             }
           },
           "patterns": [
@@ -3119,7 +3114,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3145,7 +3140,7 @@
           "name": "punctuation.comment.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3170,7 +3165,7 @@
           "name": "keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3198,7 +3193,7 @@
           "name": "keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3226,7 +3221,7 @@
           "name": "keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3254,7 +3249,7 @@
           "name": "keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3282,7 +3277,7 @@
           "name": "keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3307,7 +3302,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3332,7 +3327,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.end.regexp"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3345,29 +3340,29 @@
       ]
     },
     "regexp-single-one-line": {
-      "name": "string.regexp.quoted.single.python",
+      "name": "string.regexp.quoted.single.mojo",
       "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\')",
       "end": "(\\')|(?<!\\\\)(\\n)",
       "beginCaptures": {
         "2": {
-          "name": "invalid.deprecated.prefix.python"
+          "name": "invalid.deprecated.prefix.mojo"
         },
         "3": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "4": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "5": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3377,29 +3372,29 @@
       ]
     },
     "regexp-single-three-line": {
-      "name": "string.regexp.quoted.multi.python",
+      "name": "string.regexp.quoted.multi.mojo",
       "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\'\\'\\')",
       "end": "(\\'\\'\\')",
       "beginCaptures": {
         "2": {
-          "name": "invalid.deprecated.prefix.python"
+          "name": "invalid.deprecated.prefix.mojo"
         },
         "3": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "4": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "5": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3409,29 +3404,29 @@
       ]
     },
     "regexp-double-one-line": {
-      "name": "string.regexp.quoted.single.python",
+      "name": "string.regexp.quoted.single.mojo",
       "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\")",
       "end": "(\")|(?<!\\\\)(\\n)",
       "beginCaptures": {
         "2": {
-          "name": "invalid.deprecated.prefix.python"
+          "name": "invalid.deprecated.prefix.mojo"
         },
         "3": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "4": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "5": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3441,29 +3436,29 @@
       ]
     },
     "regexp-double-three-line": {
-      "name": "string.regexp.quoted.multi.python",
+      "name": "string.regexp.quoted.multi.mojo",
       "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\"\"\")",
       "end": "(\"\"\")",
       "beginCaptures": {
         "2": {
-          "name": "invalid.deprecated.prefix.python"
+          "name": "invalid.deprecated.prefix.mojo"
         },
         "3": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "4": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "5": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3473,26 +3468,26 @@
       ]
     },
     "string-raw-quoted-single-line": {
-      "name": "string.quoted.raw.single.python",
+      "name": "string.quoted.raw.single.mojo",
       "begin": "\\b(([uU]R)|(R))((['\"]))",
       "end": "(\\4)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "2": {
-          "name": "invalid.deprecated.prefix.python"
+          "name": "invalid.deprecated.prefix.mojo"
         },
         "3": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "4": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3508,23 +3503,23 @@
       ]
     },
     "string-bin-quoted-single-line": {
-      "name": "string.quoted.binary.single.python",
+      "name": "string.quoted.binary.single.mojo",
       "begin": "(\\b[bB])((['\"]))",
       "end": "(\\2)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "2": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3534,23 +3529,23 @@
       ]
     },
     "string-raw-bin-quoted-single-line": {
-      "name": "string.quoted.raw.binary.single.python",
+      "name": "string.quoted.raw.binary.single.mojo",
       "begin": "(\\b(?:R[bB]|[bB]R))((['\"]))",
       "end": "(\\2)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "2": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3560,26 +3555,26 @@
       ]
     },
     "string-quoted-single-line": {
-      "name": "string.quoted.single.python",
+      "name": "string.quoted.single.mojo",
       "begin": "(?:\\b([rR])(?=[uU]))?([uU])?((['\"]))",
       "end": "(\\3)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "1": {
-          "name": "invalid.illegal.prefix.python"
+          "name": "invalid.illegal.prefix.mojo"
         },
         "2": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "3": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3647,26 +3642,26 @@
       ]
     },
     "string-raw-quoted-multi-line": {
-      "name": "string.quoted.raw.multi.python",
+      "name": "string.quoted.raw.multi.mojo",
       "begin": "\\b(([uU]R)|(R))('''|\"\"\")",
       "end": "(\\4)",
       "beginCaptures": {
         "2": {
-          "name": "invalid.deprecated.prefix.python"
+          "name": "invalid.deprecated.prefix.mojo"
         },
         "3": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "4": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3682,23 +3677,23 @@
       ]
     },
     "string-bin-quoted-multi-line": {
-      "name": "string.quoted.binary.multi.python",
+      "name": "string.quoted.binary.multi.mojo",
       "begin": "(\\b[bB])('''|\"\"\")",
       "end": "(\\2)",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "2": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3708,23 +3703,23 @@
       ]
     },
     "string-raw-bin-quoted-multi-line": {
-      "name": "string.quoted.raw.binary.multi.python",
+      "name": "string.quoted.raw.binary.multi.mojo",
       "begin": "(\\b(?:R[bB]|[bB]R))('''|\"\"\")",
       "end": "(\\2)",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "2": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3734,26 +3729,26 @@
       ]
     },
     "string-quoted-multi-line": {
-      "name": "string.quoted.multi.python",
+      "name": "string.quoted.multi.mojo",
       "begin": "(?:\\b([rR])(?=[uU]))?([uU])?('''|\"\"\")",
       "end": "(\\3)",
       "beginCaptures": {
         "1": {
-          "name": "invalid.illegal.prefix.python"
+          "name": "invalid.illegal.prefix.mojo"
         },
         "2": {
-          "name": "storage.type.string.python"
+          "name": "storage.type.string.mojo"
         },
         "3": {
-          "name": "punctuation.definition.string.begin.python"
+          "name": "punctuation.definition.string.begin.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python"
+          "name": "punctuation.definition.string.end.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3821,26 +3816,26 @@
       ]
     },
     "fstring-fnorm-quoted-single-line": {
-      "name": "meta.fstring.python",
+      "name": "meta.fstring.mojo",
       "begin": "(\\b[fF])([bBuU])?((['\"]))",
       "end": "(\\3)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "1": {
-          "name": "string.interpolated.python string.quoted.single.python storage.type.string.python"
+          "name": "string.interpolated.mojo string.quoted.single.mojo storage.type.string.mojo"
         },
         "2": {
-          "name": "invalid.illegal.prefix.python"
+          "name": "invalid.illegal.prefix.mojo"
         },
         "3": {
-          "name": "punctuation.definition.string.begin.python string.interpolated.python string.quoted.single.python"
+          "name": "punctuation.definition.string.begin.mojo string.interpolated.mojo string.quoted.single.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python string.interpolated.python string.quoted.single.python"
+          "name": "punctuation.definition.string.end.mojo string.interpolated.mojo string.quoted.single.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3859,26 +3854,26 @@
       ]
     },
     "fstring-normf-quoted-single-line": {
-      "name": "meta.fstring.python",
+      "name": "meta.fstring.mojo",
       "begin": "(\\b[bBuU])([fF])((['\"]))",
       "end": "(\\3)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "1": {
-          "name": "invalid.illegal.prefix.python"
+          "name": "invalid.illegal.prefix.mojo"
         },
         "2": {
-          "name": "string.interpolated.python string.quoted.single.python storage.type.string.python"
+          "name": "string.interpolated.mojo string.quoted.single.mojo storage.type.string.mojo"
         },
         "3": {
-          "name": "punctuation.definition.string.begin.python string.quoted.single.python"
+          "name": "punctuation.definition.string.begin.mojo string.quoted.single.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python string.interpolated.python string.quoted.single.python"
+          "name": "punctuation.definition.string.end.mojo string.interpolated.mojo string.quoted.single.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3897,23 +3892,23 @@
       ]
     },
     "fstring-raw-quoted-single-line": {
-      "name": "meta.fstring.python",
+      "name": "meta.fstring.mojo",
       "begin": "(\\b(?:[rR][fF]|[fF][rR]))((['\"]))",
       "end": "(\\2)|((?<!\\\\)\\n)",
       "beginCaptures": {
         "1": {
-          "name": "string.interpolated.python string.quoted.raw.single.python storage.type.string.python"
+          "name": "string.interpolated.mojo string.quoted.raw.single.mojo storage.type.string.mojo"
         },
         "2": {
-          "name": "punctuation.definition.string.begin.python string.quoted.raw.single.python"
+          "name": "punctuation.definition.string.begin.mojo string.quoted.raw.single.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python string.interpolated.python string.quoted.raw.single.python"
+          "name": "punctuation.definition.string.end.mojo string.interpolated.mojo string.quoted.raw.single.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -3932,11 +3927,11 @@
       ]
     },
     "fstring-single-core": {
-      "name": "string.interpolated.python string.quoted.single.python",
+      "name": "string.interpolated.mojo string.quoted.single.mojo",
       "match": "(?x)\n  (.+?)\n    (\n      (?# .* and .*? in multi-line match need special handling of\n        newlines otherwise SublimeText and Atom will match slightly\n        differently.\n\n        The guard for newlines has to be separate from the\n        lookahead because of special $ matching rule.)\n      ($\\n?)\n      |\n      (?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n))\n    )\n  (?# due to how multiline regexps are matched we need a special case\n    for matching a newline character)\n  | \\n\n"
     },
     "fstring-raw-single-core": {
-      "name": "string.interpolated.python string.quoted.raw.single.python",
+      "name": "string.interpolated.mojo string.quoted.raw.single.mojo",
       "match": "(?x)\n  (.+?)\n    (\n      (?# .* and .*? in multi-line match need special handling of\n        newlines otherwise SublimeText and Atom will match slightly\n        differently.\n\n        The guard for newlines has to be separate from the\n        lookahead because of special $ matching rule.)\n      ($\\n?)\n      |\n      (?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n))\n    )\n  (?# due to how multiline regexps are matched we need a special case\n    for matching a newline character)\n  | \\n\n"
     },
     "fstring-single-brace": {
@@ -3945,12 +3940,12 @@
       "end": "(?x)\n  (\\})|(?=\\n)\n",
       "beginCaptures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       },
       "patterns": [
@@ -3965,21 +3960,21 @@
     "fstring-terminator-single": {
       "patterns": [
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(=(![rsa])?)(?=})"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(=?![rsa])(?=})"
         },
         {
           "match": "(?x)\n  ( (?: =?) (?: ![rsa])? )\n    ( : \\w? [<>=^]? [-+ ]? \\#?\n      \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )(?=})\n",
           "captures": {
             "1": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             },
             "2": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             }
           }
         },
@@ -3993,10 +3988,10 @@
       "end": "(?=})|(?=\\n)",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.format.python"
+          "name": "storage.type.format.mojo"
         },
         "2": {
-          "name": "storage.type.format.python"
+          "name": "storage.type.format.mojo"
         }
       },
       "patterns": [
@@ -4007,60 +4002,60 @@
           "include": "#fstring-single-brace"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "([bcdeEfFgGnosxX%])(?=})"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\.\\d+)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(,)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\d+)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\#)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "([-+ ])"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "([<>=^])"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\w)"
         }
       ]
     },
     "fstring-fnorm-quoted-multi-line": {
-      "name": "meta.fstring.python",
+      "name": "meta.fstring.mojo",
       "begin": "(\\b[fF])([bBuU])?('''|\"\"\")",
       "end": "(\\3)",
       "beginCaptures": {
         "1": {
-          "name": "string.interpolated.python string.quoted.multi.python storage.type.string.python"
+          "name": "string.interpolated.mojo string.quoted.multi.mojo storage.type.string.mojo"
         },
         "2": {
-          "name": "invalid.illegal.prefix.python"
+          "name": "invalid.illegal.prefix.mojo"
         },
         "3": {
-          "name": "punctuation.definition.string.begin.python string.interpolated.python string.quoted.multi.python"
+          "name": "punctuation.definition.string.begin.mojo string.interpolated.mojo string.quoted.multi.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python string.interpolated.python string.quoted.multi.python"
+          "name": "punctuation.definition.string.end.mojo string.interpolated.mojo string.quoted.multi.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -4079,26 +4074,26 @@
       ]
     },
     "fstring-normf-quoted-multi-line": {
-      "name": "meta.fstring.python",
+      "name": "meta.fstring.mojo",
       "begin": "(\\b[bBuU])([fF])('''|\"\"\")",
       "end": "(\\3)",
       "beginCaptures": {
         "1": {
-          "name": "invalid.illegal.prefix.python"
+          "name": "invalid.illegal.prefix.mojo"
         },
         "2": {
-          "name": "string.interpolated.python string.quoted.multi.python storage.type.string.python"
+          "name": "string.interpolated.mojo string.quoted.multi.mojo storage.type.string.mojo"
         },
         "3": {
-          "name": "punctuation.definition.string.begin.python string.quoted.multi.python"
+          "name": "punctuation.definition.string.begin.mojo string.quoted.multi.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python string.interpolated.python string.quoted.multi.python"
+          "name": "punctuation.definition.string.end.mojo string.interpolated.mojo string.quoted.multi.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -4117,23 +4112,23 @@
       ]
     },
     "fstring-raw-quoted-multi-line": {
-      "name": "meta.fstring.python",
+      "name": "meta.fstring.mojo",
       "begin": "(\\b(?:[rR][fF]|[fF][rR]))('''|\"\"\")",
       "end": "(\\2)",
       "beginCaptures": {
         "1": {
-          "name": "string.interpolated.python string.quoted.raw.multi.python storage.type.string.python"
+          "name": "string.interpolated.mojo string.quoted.raw.multi.mojo storage.type.string.mojo"
         },
         "2": {
-          "name": "punctuation.definition.string.begin.python string.quoted.raw.multi.python"
+          "name": "punctuation.definition.string.begin.mojo string.quoted.raw.multi.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.end.python string.interpolated.python string.quoted.raw.multi.python"
+          "name": "punctuation.definition.string.end.mojo string.interpolated.mojo string.quoted.raw.multi.mojo"
         },
         "2": {
-          "name": "invalid.illegal.newline.python"
+          "name": "invalid.illegal.newline.mojo"
         }
       },
       "patterns": [
@@ -4152,11 +4147,11 @@
       ]
     },
     "fstring-multi-core": {
-      "name": "string.interpolated.python string.quoted.multi.python",
+      "name": "string.interpolated.mojo string.quoted.multi.mojo",
       "match": "(?x)\n  (.+?)\n    (\n      (?# .* and .*? in multi-line match need special handling of\n        newlines otherwise SublimeText and Atom will match slightly\n        differently.\n\n        The guard for newlines has to be separate from the\n        lookahead because of special $ matching rule.)\n      ($\\n?)\n      |\n      (?=[\\\\\\}\\{]|'''|\"\"\")\n    )\n  (?# due to how multiline regexps are matched we need a special case\n    for matching a newline character)\n  | \\n\n"
     },
     "fstring-raw-multi-core": {
-      "name": "string.interpolated.python string.quoted.raw.multi.python",
+      "name": "string.interpolated.mojo string.quoted.raw.multi.mojo",
       "match": "(?x)\n  (.+?)\n    (\n      (?# .* and .*? in multi-line match need special handling of\n        newlines otherwise SublimeText and Atom will match slightly\n        differently.\n\n        The guard for newlines has to be separate from the\n        lookahead because of special $ matching rule.)\n      ($\\n?)\n      |\n      (?=[\\\\\\}\\{]|'''|\"\"\")\n    )\n  (?# due to how multiline regexps are matched we need a special case\n    for matching a newline character)\n  | \\n\n"
     },
     "fstring-multi-brace": {
@@ -4165,12 +4160,12 @@
       "end": "(?x)\n  (\\})\n",
       "beginCaptures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "constant.character.format.placeholder.other.python"
+          "name": "constant.character.format.placeholder.other.mojo"
         }
       },
       "patterns": [
@@ -4185,21 +4180,21 @@
     "fstring-terminator-multi": {
       "patterns": [
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(=(![rsa])?)(?=})"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(=?![rsa])(?=})"
         },
         {
           "match": "(?x)\n  ( (?: =?) (?: ![rsa])? )\n    ( : \\w? [<>=^]? [-+ ]? \\#?\n      \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )(?=})\n",
           "captures": {
             "1": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             },
             "2": {
-              "name": "storage.type.format.python"
+              "name": "storage.type.format.mojo"
             }
           }
         },
@@ -4213,10 +4208,10 @@
       "end": "(?=})",
       "beginCaptures": {
         "1": {
-          "name": "storage.type.format.python"
+          "name": "storage.type.format.mojo"
         },
         "2": {
-          "name": "storage.type.format.python"
+          "name": "storage.type.format.mojo"
         }
       },
       "patterns": [
@@ -4227,35 +4222,35 @@
           "include": "#fstring-multi-brace"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "([bcdeEfFgGnosxX%])(?=})"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\.\\d+)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(,)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\d+)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\#)"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "([-+ ])"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "([<>=^])"
         },
         {
-          "name": "storage.type.format.python",
+          "name": "storage.type.format.mojo",
           "match": "(\\w)"
         }
       ]
