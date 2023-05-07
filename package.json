@@ -1,0 +1,25 @@
+{
+  "name": "syntaxes",
+  "displayName": "Mojo🔥",
+  "description": "Mojo🔥 extension for Visual Studio Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mojo",
+      "aliases": ["Mojo🔥", "mojo"],
+      "extensions": [".mojo",".\\U0001F525"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mojo",
+      "scopeName": "source.mojo",
+      "path": "./syntaxes/mojo.tmLanguage.json"
+    }]
+  }
+}
