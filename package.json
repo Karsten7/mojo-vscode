@@ -13,7 +13,7 @@
     "languages": [{
       "id": "mojo",
       "aliases": ["Mojo🔥", "mojo"],
-      "extensions": [".mojo",".🔥",".\\U0001F525"],
+      "extensions": [".mojo",".🔥",".\uD83D\uDD25"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
