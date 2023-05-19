@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/Karsten7/mojo-vscode.git"
   },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.78.0"
   },
@@ -15,16 +16,32 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "mojo",
-      "aliases": ["Mojo🔥", "mojo"],
-      "extensions": [".mojo",".🔥",".\uD83D\uDD25"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "mojo",
-      "scopeName": "source.mojo",
-      "path": "./syntaxes/mojo.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "mojo",
+        "aliases": [
+          "Mojo🔥",
+          "mojo"
+        ],
+        "extensions": [
+          ".mojo",
+          ".🔥",
+          ".🔥"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mojo",
+        "scopeName": "source.mojo",
+        "path": "./syntaxes/mojo.tmLanguage.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[mojo]": {
+        "diffEditor.ignoreTrimWhitespace": false
+      }
+    }
   }
 }
