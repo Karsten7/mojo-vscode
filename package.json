@@ -1,8 +1,13 @@
 {
   "name": "mojo-vscode",
   "displayName": "Mojo🔥 Syntax",
-  "description": "Mojo🔥 syntax highlighting for Visual Studio Code",
+  "description": "Mojo🔥 syntax support for Visual Studio Code",
   "version": "1.0.0",
+  "publisher": "Karsten7",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Karsten7/mojo-vscode.git"
+  },
   "engines": {
     "vscode": "^1.78.0"
   },

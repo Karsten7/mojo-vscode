@@ -17,7 +17,7 @@ and in notebooks
 (Example code from the [Mojo Playground](https://playground.modular.com/))
 
   
-  
+
   
 
 ## Release Notes
