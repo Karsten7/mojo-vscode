@@ -6,12 +6,12 @@ It is based on the syntax information provided in the [mojo-syntax](https://gith
 
 ## Features
 
-Syntax highlighting in the editor 
+Provides syntax highlighting, bracket matching, and folding for Mojo🔥 files in the editor 
 
 ![editor](images\Matmul-editor.PNG)  
 (Example code from [Mojo linguist samples](https://github.com/modularml/linguist/blob/mojo/samples/Mojo/Matmul.mojo))
 
-and in notebooks
+and for Mojo🔥 code cells in notebooks
 
 ![Notebook](images/Mandelbrot-notebook.PNG)  
 (Example code from the [Mojo Playground](https://playground.modular.com/))
