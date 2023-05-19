@@ -3,7 +3,7 @@
         // symbol used for single line comment. Remove this entry if your language does not support line comments
         "lineComment": "#",
         // symbols used for start and end a block comment. Remove this entry if your language does not support block comments
-        "blockComment": [ "\"\"\"", "\"\"\"" ]
+        "blockComment": ["\"\"\"", "\"\"\""]
     },
     // symbols used as brackets
     "brackets": [
@@ -13,11 +13,28 @@
     ],
     // symbols that are auto closed when typing
     "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
+        { "open": "{", "close": "}" },
+        { "open": "[", "close": "]" },
+        { "open": "(", "close": ")" },
+        { "open": "\"", "close": "\"", "notIn": ["string"] },
+        { "open": "r\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "R\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "u\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "U\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "f\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "F\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "b\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "B\"", "close": "\"", "notIn": ["string", "comment"] },
+        { "open": "'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "r'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "R'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "u'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "U'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "f'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "F'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "b'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "B'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "`", "close": "`", "notIn": ["string"] }
     ],
     // symbols that can be used to surround a selection
     "surroundingPairs": [
@@ -25,6 +42,7 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-        ["'", "'"]
+        ["'", "'"],
+        ["`", "`"]
     ]
 }
