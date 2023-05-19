@@ -44,5 +44,18 @@
         ["\"", "\""],
         ["'", "'"],
         ["`", "`"]
-    ]
+    ],
+	"folding": {
+		"offSide": true,
+		"markers": {
+			"start": "^\\s*#\\s*region\\b",
+			"end": "^\\s*#\\s*endregion\\b"
+		}
+	},
+	"onEnterRules": [
+		{
+			"beforeText": "^\\s*(?:def|class|for|if|elif|else|while|try|with|finally|except|async).*?:\\s*$",
+			"action": { "indent": "indent" }
+		}
+	]
 }
