@@ -1444,7 +1444,7 @@
       ]
     },
     "parameter-ownership": {
-      "begin": "(?x)  \\b (inout|owned)",
+      "begin": "(?x)  \\b (inout|owned|borrowed)",
       "end": "(?<=,)|(?=\\))",
       "beginCaptures": {
         "1": {
