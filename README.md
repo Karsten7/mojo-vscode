@@ -6,7 +6,7 @@ It is based on the syntax information provided in the [mojo-syntax](https://gith
 
 ## Features
 
-Provides syntax highlighting, bracket matching, and code folding for Mojo🔥 files in the editor 
+Provides syntax highlighting, bracket matching, code folding, and indenting for Mojo🔥 files in the editor 
 
 ![editor](images\Matmul-editor.PNG)  
 (Example code from [Mojo linguist samples](https://github.com/modularml/linguist/blob/mojo/samples/Mojo/Matmul.mojo))
