@@ -1335,6 +1335,9 @@
           "include": "#illegal-object-name"
         },
         {
+          "include": "#parameter-ownership"
+        },
+        {
           "include": "#parameter-special"
         },
         {
@@ -1402,19 +1405,22 @@
       ]
     },
     "parameter-special": {
-      "match": "(?x)\n  \\b ((self)|(cls)) \\b \\s*(?:(,)|(?=\\)))\n",
-      "captures": {
+      "begin": "(?x)\n  \\b ((self)|(cls))",
+      "end": "(,)|(?=\\))",
+      "beginCaptures": {
         "1": {
-          "name": "variable.parameter.function.language.mojo"
+          "name": "variable.parameter.function.languageTestPS.mojo"
         },
         "2": {
           "name": "variable.parameter.function.language.special.self.mojo"
         },
         "3": {
           "name": "variable.parameter.function.language.special.cls.mojo"
-        },
-        "4": {
-          "name": "punctuation.separator.parameters.mojo"
+        }
+      },
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.separator.parametersTestPS.mojo"
         }
       }
     },
@@ -1432,6 +1438,31 @@
         }
       },
       "patterns": [
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+      "parameter-ownership": {
+      "begin": "(?x)  \\b (inout|owned)",
+      "end": "(?<=,)|(?=\\))",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.parameter.function.test1"
+        }
+      },
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.separator.parametersTestPO.mojo"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#annotated-parameter"
+        },
+        {
+          "include": "#parameter-special"
+        },
         {
           "include": "#expression"
         }
