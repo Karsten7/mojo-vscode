@@ -1408,22 +1408,19 @@
       }
     },
     "parameter-special": {
-      "begin": "(?x)\n  \\b ((self)|(cls))",
-      "end": "(,)|(?=\\))",
-      "beginCaptures": {
+      "match": "(?x)\n  \\b ((self)|(cls)) \\b \\s*(?:(,)|(?=\\)))\n",
+      "captures": {
         "1": {
-          "name": "variable.parameter.function.language.mojo"
+          "name": "variable.parameter.function.language.python"
         },
         "2": {
-          "name": "variable.parameter.function.language.special.self.mojo"
+          "name": "variable.parameter.function.language.special.self.python"
         },
         "3": {
-          "name": "variable.parameter.function.language.special.cls.mojo"
-        }
-      },
-      "endCaptures": {
-        "1": {
-          "name": "punctuation.separator.parameters.mojo"
+          "name": "variable.parameter.function.language.special.cls.python"
+        },
+        "4": {
+          "name": "punctuation.separator.parameters.python"
         }
       }
     },
