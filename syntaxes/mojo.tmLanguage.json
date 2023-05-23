@@ -1341,15 +1341,7 @@
           "include": "#parameter-special"
         },
         {
-          "match": "(?x)\n  ([[:alpha:]_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
-          "captures": {
-            "1": {
-              "name": "variable.parameter.function.language.mojo"
-            },
-            "2": {
-              "name": "punctuation.separator.parameters.mojo"
-            }
-          }
+          "include": "#parameter-simple"
         },
         {
           "include": "#comments"
@@ -1404,6 +1396,17 @@
         }
       ]
     },
+    "parameter-simple": {
+      "match": "(?x)\n  ([[:alpha:]_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
+      "captures": {
+        "1": {
+          "name": "variable.parameter.function.language.mojo"
+        },
+        "2": {
+          "name": "punctuation.separator.parameters.mojo"
+        }
+      }
+    },
     "parameter-special": {
       "begin": "(?x)\n  \\b ((self)|(cls))",
       "end": "(,)|(?=\\))",
@@ -1443,7 +1446,7 @@
         }
       ]
     },
-      "parameter-ownership": {
+    "parameter-ownership": {
       "begin": "(?x)  \\b (inout|owned)",
       "end": "(?<=,)|(?=\\))",
       "beginCaptures": {
@@ -1462,6 +1465,9 @@
         },
         {
           "include": "#parameter-special"
+        },
+        {
+          "include": "#parameter-simple"
         },
         {
           "include": "#expression"
