@@ -1335,18 +1335,13 @@
           "include": "#illegal-object-name"
         },
         {
+          "include": "#parameter-ownership"
+        },
+        {
           "include": "#parameter-special"
         },
         {
-          "match": "(?x)\n  ([[:alpha:]_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
-          "captures": {
-            "1": {
-              "name": "variable.parameter.function.language.mojo"
-            },
-            "2": {
-              "name": "punctuation.separator.parameters.mojo"
-            }
-          }
+          "include": "#parameter-simple"
         },
         {
           "include": "#comments"
@@ -1401,20 +1396,31 @@
         }
       ]
     },
-    "parameter-special": {
-      "match": "(?x)\n  \\b ((self)|(cls)) \\b \\s*(?:(,)|(?=\\)))\n",
+    "parameter-simple": {
+      "match": "(?x)\n  ([[:alpha:]_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n",
       "captures": {
         "1": {
           "name": "variable.parameter.function.language.mojo"
         },
         "2": {
-          "name": "variable.parameter.function.language.special.self.mojo"
+          "name": "punctuation.separator.parameters.mojo"
+        }
+      }
+    },
+    "parameter-special": {
+      "match": "(?x)\n  \\b ((self)|(cls)) \\b \\s*(?:(,)|(?=\\)))\n",
+      "captures": {
+        "1": {
+          "name": "variable.parameter.function.language.python"
+        },
+        "2": {
+          "name": "variable.parameter.function.language.special.self.python"
         },
         "3": {
-          "name": "variable.parameter.function.language.special.cls.mojo"
+          "name": "variable.parameter.function.language.special.cls.python"
         },
         "4": {
-          "name": "punctuation.separator.parameters.mojo"
+          "name": "punctuation.separator.parameters.python"
         }
       }
     },
@@ -1432,6 +1438,34 @@
         }
       },
       "patterns": [
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+    "parameter-ownership": {
+      "begin": "(?x)  \\b (inout|owned|borrowed)",
+      "end": "(?<=,)|(?=\\))",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.parameter.function.ownership.mojo"
+        }
+      },
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.separator.parameters.mojo"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#annotated-parameter"
+        },
+        {
+          "include": "#parameter-special"
+        },
+        {
+          "include": "#parameter-simple"
+        },
         {
           "include": "#expression"
         }
