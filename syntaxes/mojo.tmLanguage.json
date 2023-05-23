@@ -1409,7 +1409,7 @@
       "end": "(,)|(?=\\))",
       "beginCaptures": {
         "1": {
-          "name": "variable.parameter.function.languageTestPS.mojo"
+          "name": "variable.parameter.function.language.mojo"
         },
         "2": {
           "name": "variable.parameter.function.language.special.self.mojo"
@@ -1420,7 +1420,7 @@
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.separator.parametersTestPS.mojo"
+          "name": "punctuation.separator.parameters.mojo"
         }
       }
     },
@@ -1448,12 +1448,12 @@
       "end": "(?<=,)|(?=\\))",
       "beginCaptures": {
         "1": {
-          "name": "variable.parameter.function.test1"
+          "name": "variable.parameter.function.ownership.mojo"
         }
       },
       "endCaptures": {
         "1": {
-          "name": "punctuation.separator.parametersTestPO.mojo"
+          "name": "punctuation.separator.parameters.mojo"
         }
       },
       "patterns": [
