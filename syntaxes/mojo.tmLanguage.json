@@ -1451,11 +1451,6 @@
           "name": "variable.parameter.function.ownership.mojo"
         }
       },
-      "endCaptures": {
-        "1": {
-          "name": "punctuation.separator.parameters.mojo"
-        }
-      },
       "patterns": [
         {
           "include": "#annotated-parameter"
