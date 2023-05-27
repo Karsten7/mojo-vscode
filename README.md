@@ -27,7 +27,7 @@ Please note that this extension is not an official product and is not associated
 
 ## Getting Started
 
-1. Install the Mojo🔥 VS Code Extension from the [VS Code Marketplace](link_to_extension).
+1. Install the Mojo🔥 VS Code Extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Karsten7.mojo-vscode).
 2. Open or create a file with the `.mojo` or `.🔥` extension to automatically enable syntax highlighting and other language features.
 3. Use the `mojo` language identify to customize Mojo🔥 specific settings.
 4. Start coding with Mojo🔥 and enjoy the enhanced support provided by the extension.
@@ -37,10 +37,9 @@ Please note that this extension is not an official product and is not associated
 
 This extension is an open-source project, and community contributions are welcome. If you encounter any issues, have feature requests, or would like to contribute code improvements, please visit the project repository on [GitHub](https://github.com/Karsten7/mojo-vscode). 
 
-For fixes and improvements to the syntax that also apply to Python, pull requests should be opened against the [MagicPython](https://github.com/MagicStack/MagicPython) project.  
-For Mojo-specific syntax issues and improvement, the official [mojo-syntax](https://github.com/modularml/mojo-syntax) repository should be the right place.
+For fixes and improvements to the syntax that also apply to Python, pull requests should be opened against the [MagicPython](https://github.com/MagicStack/MagicPython) project. For Mojo-specific syntax issues and improvement, the official [mojo-syntax](https://github.com/modularml/mojo-syntax) repository should be the right place.
 
-For anything beyond the syntax file or if you're unsure where the right place is, please create a [pull request](https://github.com/Karsten7/mojo-vscode/pulls) or [issue](https://github.com/Karsten7/mojo-vscode/issues) for [this project](https://github.com/Karsten7/mojo-vscode).
+For anything beyond the syntax file or if you're unsure where the right place is, please create a [pull request](https://github.com/Karsten7/mojo-vscode/pulls) or [issue](https://github.com/Karsten7/mojo-vscode/issues) on [this extensions' GitHub page](https://github.com/Karsten7/mojo-vscode).
 
 
 ## Current Intentional Syntax Deviations 
