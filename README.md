@@ -8,7 +8,7 @@ It is based on the syntax information provided in the [mojo-syntax](https://gith
 
 Provides syntax highlighting, bracket matching, code folding, and indenting for Mojo🔥 files in the editor 
 
-![editor](images\Matmul-editor.PNG)  
+![editor](images/Matmul-editor.PNG)  
 (Example code from [Mojo linguist samples](https://github.com/modularml/linguist/blob/mojo/samples/Mojo/Matmul.mojo))
 
 and for Mojo🔥 code cells in notebooks
@@ -35,7 +35,7 @@ Please note that this extension is not an official product and is not associated
 
 ## Contributing
 
-This extension is an open-source project, and community contributions are welcome. If you encounter any issues, have feature requests, or would like to contribute code improvements, please visit the project repository on [GitHub](link_to_repository).
+This extension is an open-source project, and community contributions are welcome. If you encounter any issues, have feature requests, or would like to contribute code improvements, please visit the project repository on [GitHub](https://github.com/Karsten7/mojo-vscode).
 
 
 ## Disclaimer
