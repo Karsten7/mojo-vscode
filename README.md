@@ -35,7 +35,17 @@ Please note that this extension is not an official product and is not associated
 
 ## Contributing
 
-This extension is an open-source project, and community contributions are welcome. If you encounter any issues, have feature requests, or would like to contribute code improvements, please visit the project repository on [GitHub](https://github.com/Karsten7/mojo-vscode).
+This extension is an open-source project, and community contributions are welcome. If you encounter any issues, have feature requests, or would like to contribute code improvements, please visit the project repository on [GitHub](https://github.com/Karsten7/mojo-vscode). 
+
+For fixes and improvements to the syntax that also apply to Python, pull requests should be opened against the [MagicPython](https://github.com/MagicStack/MagicPython) project.  
+For Mojo-specific syntax issues and improvement, the official [mojo-syntax](https://github.com/modularml/mojo-syntax) repository should be the right place.
+
+For anything beyond the syntax file or if you're unsure where the right place is, please create a [pull request](https://github.com/Karsten7/mojo-vscode/pulls) or [issue](https://github.com/Karsten7/mojo-vscode/issues) for [this project](https://github.com/Karsten7/mojo-vscode).
+
+
+## Current Intentional Syntax Deviations 
+
+Currently the syntax file intentionally deviates form the official [mojo-syntax](https://github.com/modularml/mojo-syntax) for ownership related markers on argument names. The change introduced in the merged pull request titled ["Update the Mojo syntax file for the May 11 release"](https://github.com/modularml/mojo-syntax/pull/2) is not applied. Instead `inout`, `owned`, and `borrowed` can be highlighted by using the `"variable.parameter.function.ownership"` scope that is implemented in the syntax file of this project. Furthermore, all `.python` have been replaced by `.mojo` throughout the syntax file.
 
 
 ## Disclaimer
