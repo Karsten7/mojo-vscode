@@ -53,7 +53,7 @@ Example:
 With the following settings within the `.code-workspace` file of that file's workspace:
 
 ```json
-    "settings": {
+  "settings": {
     "editor.tokenColorCustomizations": {
       "textMateRules": [
         {
