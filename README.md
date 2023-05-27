@@ -47,6 +47,33 @@ For anything beyond the syntax file or if you're unsure where the right place is
 
 Currently the syntax file intentionally deviates form the official [mojo-syntax](https://github.com/modularml/mojo-syntax) for ownership related markers on argument names. The change introduced in the merged pull request titled ["Update the Mojo syntax file for the May 11 release"](https://github.com/modularml/mojo-syntax/pull/2) is not applied. Instead `inout`, `owned`, and `borrowed` can be highlighted by using the `"variable.parameter.function.ownership"` scope that is implemented in the syntax file of this project. Furthermore, all `.python` have been replaced by `.mojo` throughout the syntax file.
 
+Example:  
+![Ownership Syntax Test](images/OwnershipSyntaxTest.png)
+
+With the following settings within the `.code-workspace` file of that file's workspace:
+
+```json
+    "settings": {
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "variable.parameter.function.ownership",
+          "settings": {
+            "foreground": "#FF0000"
+          }
+        },
+        {
+          "scope": "variable.parameter.function.language.special.self",
+          "settings": {
+            "foreground": "#00FF00"
+          }
+        }
+      ]
+    }
+  }
+```
+
+
 
 ## Disclaimer
 
