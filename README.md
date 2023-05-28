@@ -1,6 +1,6 @@
 # Mojo🔥 Syntax
 
-This [VS Code](https://code.visualstudio.com/) extension provides syntax support for the [Mojo🔥 programming language](https://github.com/modularml/mojo).  
+This [VS Code](https://code.visualstudio.com/) extension provides syntax support for the [Mojo🔥 programming language](https://github.com/modularml/mojo) ([Docs](https://docs.modular.com/mojo/)).  
 It is based on the syntax information provided in the [mojo-syntax](https://github.com/modularml/mojo-syntax) repository.
 
 
