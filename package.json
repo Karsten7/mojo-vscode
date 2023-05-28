@@ -14,7 +14,7 @@
   "icon": "images/mojoFlame.png",
   "galleryBanner": {
     "color": "#001735",
-    "theme": "light"
+    "theme": "dark"
   },
   "license": "MIT",
   "engines": {
