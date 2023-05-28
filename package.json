@@ -12,6 +12,10 @@
     "url": "https://github.com/Karsten7/mojo-vscode/issues"
   },
   "icon": "images/mojo🔥.png",
+  "galleryBanner": {
+    "color": "#001735",
+    "theme": "light"
+  },
   "license": "MIT",
   "engines": {
     "vscode": "^1.78.0"
