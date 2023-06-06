@@ -2,7 +2,7 @@
   "name": "mojo-vscode",
   "displayName": "Mojo🔥 Syntax",
   "description": "Mojo🔥 syntax support for Visual Studio Code",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "Karsten7",
   "repository": {
     "type": "git",
