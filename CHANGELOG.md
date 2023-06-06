@@ -4,6 +4,10 @@ All notable changes to the "Mojo🔥 Syntax" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [1.0.0]
 
 - Initial release
+
+## [1.0.3]
+
+- Add link to wiki showing how to connect local VSCode to remote JupyterHub of the Mojo Playground
