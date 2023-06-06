@@ -33,6 +33,10 @@ Please note that this extension is not an official product and is not associated
 4. Start coding with Mojo🔥 and enjoy the enhanced support provided by the extension.
 
 
+### Connecting VSCode to the Mojo Playground
+Check out the [wiki](https://github.com/Karsten7/mojo-vscode/wiki#2-connecting-vscode-to-the-mojo-playground) on how to connect your local VSCode to the JupyterHub of the Mojo Playground. 
+
+
 ## Contributing
 
 This extension is an open-source project, and community contributions are welcome. If you encounter any issues, have feature requests, or would like to contribute code improvements, please visit the project repository on [GitHub](https://github.com/Karsten7/mojo-vscode). 
